@@ -1,0 +1,247 @@
+@import 'global';
+
+.bg-light {
+  background: none !important;
+}
+
+.nav-item {
+  margin: 0 0.5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav-link {
+  color: $color_4;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+
+  &:hover {
+    color: $color_4;
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  &::after {
+    content: '';
+    width: 90%;
+    height: 2px;
+    border-radius: 1px;
+    position: absolute;
+    bottom: -0.1rem;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    background-color: $color_4;
+    transform-origin: right;
+    transition: trans(transform);
+  }
+}
+
+#feedback {
+  font-size: 1rem;
+  transition: trans(all);
+  transform: translateY(-1rem);
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  label {
+    color: $color_1;
+    font-weight: 700;
+  }
+}
+
+#tvseries {
+  height: 50px;
+  box-shadow: none;
+  border-radius: 7px 0 0 7px;
+  border: 1px solid $color_1;
+  transition: trans(border-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color_3;
+
+  &:focus {
+    border-color: $color_2;
+  }
+}
+
+#submitPlay {
+  border-radius: 0 7px 7px 0;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color_1;
+  border: 1px solid $color_1;
+  outline: none;
+  box-shadow: none;
+  transition: trans(all);
+
+  &:hover {
+    background-color: $color_2;
+    border-color: $color_2;
+  }
+
+  .fas {
+    color: $color_4;
+    font-size: 1.3rem;
+  }
+}
+
+.tvseries__container {
+  margin: 120px auto 0 auto;
+}
+
+// series
+.series {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.series__info {
+  width: 100%;
+  margin-left: 60px;
+  min-height: 340px;
+  position: relative;
+}
+
+.series__detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 340px;
+}
+
+.series__info__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.series {
+  border: 1px solid $color_2;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 60px;
+  background-color: $color_4;
+}
+
+.series__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color_2;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.series__image {
+  width: 240px;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+}
+
+.summary {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.series__info__details__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .info__titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    p {
+      font-weight: 600;
+      font-size: 16px;
+      color: $color_1;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .info__results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    span {
+      color: $color_3;
+      margin-left: 1rem;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+}
+
+.series__info__details__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 0 3rem;
+
+  &:hover a {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+
+  &:hover .fa-play {
+    transform: translateX(0);
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: $color_1;
+    transition: trans(all);
+    opacity: 0;
+  }
+
+  .fa-play {
+    font-size: 2.5rem;
+    display: inline-block;
+    color: $color_2;
+    transition: trans(all);
+    cursor: pointer;
+    transform: translateX(3rem);
+  }
+}
